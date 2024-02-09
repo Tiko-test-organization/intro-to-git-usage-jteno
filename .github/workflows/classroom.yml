@@ -34,4 +34,4 @@ jobs:
         run: git shortlog | tee commit_messages.txt
 
       - name: Display Commit Messages
-        run: cat commit_messages.txt
+        run: echo "Commit Messages:" && echo && cat commit_messages.txt
