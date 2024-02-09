@@ -21,6 +21,15 @@ jobs:
       - name: Run Tests
         run: python tests/test_script.py
 
+      - name: Setup Git
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'  # Choose a Node.js version that includes git
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Git
+        run: npm install -g git
+
       - name: Run git shortlog
         run: git shortlog > commit_messages.txt
 
