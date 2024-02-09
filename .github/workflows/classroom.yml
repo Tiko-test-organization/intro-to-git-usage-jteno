@@ -31,7 +31,7 @@ jobs:
         run: npm install -g git
 
       - name: Run git log
-        run: git log > commit_messages.txt
+        run: git log --oneline > commit_messages.txt
 
       - name: Display Commit Messages
         run: |
