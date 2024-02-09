@@ -30,10 +30,13 @@ jobs:
       - name: Install Git
         run: npm install -g git
 
-      - name: Run git shortlog
-        run: git --git-dir=.git shortlog | tee commit_messages.txt
+      - name: Run git log
+        run: git log > commit_messages.txt
 
       - name: Display Commit Messages
-        run: echo "Commit Messages:" && echo && cat commit_messages.txt
+        run: |
+          echo "Commit Messages:"
+          echo
+          cat commit_messages.txt
 
 
